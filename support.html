@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - The Python Morpion</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleOtherReasonField(value) {
+            const otherReasonField = document.getElementById('other-reason-field');
+            if (value === 'autres') {
+                otherReasonField.style.display = 'block';
+                document.getElementById('other-reason').required = true;
+            } else {
+                otherReasonField.style.display = 'none';
+                document.getElementById('other-reason').required = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Support</h1>
+    </header>
+    <main class="main">
+        <div class="content">
+            <p>Besoin d'aide ou envie de nous contacter ? Remplissez le formulaire ci-dessous.</p>
+            <form action="https://formspree.io/f/mqaklkgd" method="POST" class="support-form">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                
+                <label for="reason">Raison de votre message :</label>
+                <select id="reason" name="reason" required onchange="toggleOtherReasonField(this.value)">
+                    <option value="" disabled selected>Choisissez une option</option>
+                    <option value="question">Question</option>
+                    <option value="bug">Bug</option>
+                    <option value="installation">Je n'arrive pas à installer</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="autres">Autres</option>
+                </select>
+                
+                <div id="other-reason-field" style="display: none;">
+                    <label for="other-reason">Veuillez préciser :</label>
+                    <input type="text" id="other-reason" name="other-reason" placeholder="Votre raison">
+                </div>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+            <br>
+            <button class="btn" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2024 The Python Morpion - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background: url('table.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+}
+
+/* En-tête */
+.header {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Couche sombre semi-transparente */
+    color: white;
+    padding: 2rem 0;
+    backdrop-filter: blur(5px); /* Ajout d'un effet de flou */
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Bouton Support dans l'en-tête */
+.support-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: #000000;
+    color: white;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.support-btn:hover {
+    background: #000c52;
+    transform: scale(1.1);
+}
+
+/* Section principale */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+    background: rgba(255, 255, 255, 0.8); /* Couleur blanche semi-transparente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+}
+
+/* Boutons */
+.btn {
+    background: #000000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #000c52;
+    transform: scale(1.1);
+}
+
+/* Formulaire support */
+.support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.support-form input, .support-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.support-form button {
+    background: #000000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.support-form button:hover {
+    background: #000c52;
+}
+
+/* Pied de page */
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
