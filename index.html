@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - The Python Morpion</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour l'image à gauche du titre */
+        .header .logo {
+            width: 50px; /* Largeur de l'image, ajuste selon ta préférence */
+            height: auto; /* Garde les proportions de l'image */
+            margin-right: 10px; /* Espacement entre l'image et le texte */
+        }
+
+        /* Container de l'en-tête avec le titre et le sous-titre */
+        .header {
+            text-align: center; /* Centrer tout le contenu dans le header */
+            display: flex;
+            flex-direction: column; /* Aligner les éléments verticalement */
+            align-items: center; /* Centrer horizontalement */
+        }
+
+        /* Titre avec l'image à gauche */
+        .header h1 {
+            display: flex; /* Permet d'afficher l'image et le texte sur une ligne */
+            align-items: center; /* Aligne l'image et le texte verticalement */
+            margin: 0; /* Enlève les marges par défaut */
+        }
+
+        /* Style pour le sous-titre */
+        .header .subtitle {
+            font-size: 1.2rem;
+            margin-top: 10px; /* Marge pour espacer le sous-titre du titre */
+        }
+    </style>
 </head>
 <body>
     <!-- Musique de fond -->
@@ -25,7 +54,12 @@
         <!-- Bouton Règles du jeu dans la bannière -->
         <button class="btn" onclick="window.location.href='rules.html'" style="position: absolute; left: 20px; top: 80px;">Règles du jeu</button>
 
-        <h1 class="title">The Python Morpion</h1>
+        <!-- Titre avec l'image à gauche -->
+        <h1 class="title">
+            <img src="python.png" alt="Python" class="logo"> The Python Morpion
+        </h1>
+
+        <!-- Sous-titre en dessous du titre -->
         <p class="subtitle">Un jeu simple pour tout le monde</p>
     </header>
 
