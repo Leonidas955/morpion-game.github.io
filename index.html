@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Musique de fond -->
+    <audio id="background-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+    <div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0, 0, 0, 0.7); padding: 10px; border-radius: 8px; color: white;">
+        <button id="play-music" class="btn" style="margin-bottom: 10px;">🎵 Activer la musique</button>
+        <label for="volume-control" style="font-size: 14px;">Volume : </label>
+        <input id="volume-control" type="range" min="0" max="1" step="0.01" value="0.5" style="width: 100px;">
+    </div>
+
     <header class="header">
         <!-- Bouton Support dans la bannière -->
         <button class="btn" onclick="window.location.href='support.html'" style="position: absolute; left: 20px; top: 20px;">Support</button>
@@ -23,12 +34,38 @@
             <p>Bienvenue sur la page d'accueil de "The Python Morpion". Cliquez ci-dessous pour télécharger le jeu ou accéder à d'autres pages.</p>
             <a href="download.html">
                 <button class="btn">Télécharger le jeu</button>
-            
+            </a>
         </div>
     </main>
 
     <footer class="footer">
         <p>© 2024 The Python Morpion - Tous droits réservés.</p>
     </footer>
+
+    <script>
+        // Activation de la musique via le bouton
+        const music = document.getElementById('background-music');
+        const playButton = document.getElementById('play-music');
+        const volumeControl = document.getElementById('volume-control');
+
+        // Réglage initial du volume
+        music.volume = 0.5;
+
+        // Lecture/arrêt de la musique
+        playButton.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                playButton.textContent = "🎵 Couper la musique";
+            } else {
+                music.pause();
+                playButton.textContent = "🎵 Activer la musique";
+            }
+        });
+
+        // Ajustement du volume
+        volumeControl.addEventListener('input', (event) => {
+            music.volume = event.target.value;
+        });
+    </script>
 </body>
 </html>
